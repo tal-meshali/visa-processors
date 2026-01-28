@@ -1,0 +1,10 @@
+{
+  "viewType": "1",
+  "payType": 1,
+  "appType": 2,
+  "appSType": 1,
+  "RequestedVisaDays": 30,
+  "puofvisit": "V01",
+  "contState": "ISRAEL",
+  "conCountry": "ISR"
+}
