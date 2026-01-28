@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from processing.tazania.util_types import TanzaniaPayloadData, EmploymentStatus
+from tazania.util_types import TanzaniaPayloadData, EmploymentStatus
 
 
 def get_employment_type(data: TanzaniaPayloadData):

@@ -1,8 +1,8 @@
 from datetime import datetime
 
-from processing.morocco.util_types import *
-from processing.tazania.tanzania_pipeline import TanzaniaEVisaPipeline
-from processing.tazania.util_types import TanzaniaPayloadData, TanzaniaContactData, TanzaniaTravelData, PersonalData, \
+from morocco.util_types import *
+from tazania.tanzania_pipeline import TanzaniaEVisaPipeline
+from tazania.util_types import TanzaniaPayloadData, TanzaniaContactData, TanzaniaTravelData, PersonalData, \
     TanzaniaDocumentData
 
 pipeline = TanzaniaEVisaPipeline()

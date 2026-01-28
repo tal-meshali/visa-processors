@@ -1,7 +1,7 @@
 from datetime import datetime
 
-from processing.morocco.morocco_pipeline import MoroccoEVisaPipeline
-from processing.morocco.util_types import *
+from morocco.morocco_pipeline import MoroccoEVisaPipeline
+from morocco.util_types import *
 
 pipeline = MoroccoEVisaPipeline()
 

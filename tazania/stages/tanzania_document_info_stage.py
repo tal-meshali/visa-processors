@@ -2,8 +2,8 @@ import os
 from mimetypes import guess_type
 from typing import Dict, Optional, List
 
-from processing.tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
-from processing.tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData
+from tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
+from tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData
 
 
 class TanzaniaDocumentsUploadStage(BaseTanzaniaEVisaStage):

@@ -1,8 +1,8 @@
 import json
 from abc import abstractmethod
 from typing import Generic, Dict, List
-from processing.common.util_types import TPayloadData, TTemplate
-from processing.common.variable import Variable
+from common.util_types import TPayloadData, TTemplate
+from common.variable import Variable
 
 
 class EVisaTemplateStage(Generic[TPayloadData, TTemplate]):

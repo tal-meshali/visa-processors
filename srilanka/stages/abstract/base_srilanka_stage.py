@@ -3,8 +3,8 @@ from typing import Dict, Optional
 
 from requests import Session
 
-from processing.common.stages.evisa_stage import BaseEVisaStage
-from processing.srilanka.util_types import SriLankaPayloadData, SriLankaVisaStages
+from common.stages.evisa_stage import BaseEVisaStage
+from srilanka.util_types import SriLankaPayloadData, SriLankaVisaStages
 
 
 class BaseSriLankaEVisaStage(BaseEVisaStage[SriLankaPayloadData, SriLankaVisaStages], ABC):

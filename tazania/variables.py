@@ -3,7 +3,7 @@ from typing import Dict, Callable, List
 
 from bs4 import BeautifulSoup
 
-from processing.common.variable import Variable
+from common.variable import Variable
 
 
 class TanzaniaOptionsVariable(Variable[str]):

@@ -3,8 +3,8 @@ from typing import Dict
 
 from requests import Session, Response
 
-from processing.morocco.stages.abstract.morocco_evisa_stage import BaseMoroccoEVisaStage
-from processing.morocco.util_types import MoroccoVisaStages, MoroccoPayloadData
+from morocco.stages.abstract.morocco_evisa_stage import BaseMoroccoEVisaStage
+from morocco.util_types import MoroccoVisaStages, MoroccoPayloadData
 
 TOKEN_RE = re.compile(r"access_token=([\.\-\w]+)")
 

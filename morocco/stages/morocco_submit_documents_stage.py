@@ -1,7 +1,7 @@
 from typing import Dict
 
-from processing.morocco.stages.abstract.morocco_evisa_stage import BaseMoroccoEVisaStage
-from processing.morocco.util_types import MoroccoVisaStages, MoroccoPayloadData
+from morocco.stages.abstract.morocco_evisa_stage import BaseMoroccoEVisaStage
+from morocco.util_types import MoroccoVisaStages, MoroccoPayloadData
 
 
 class MoroccoSubmitDocumentStage(BaseMoroccoEVisaStage):

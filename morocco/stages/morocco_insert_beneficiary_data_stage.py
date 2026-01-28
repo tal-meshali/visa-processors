@@ -1,8 +1,8 @@
 from requests import Session, Response, get
 
-from processing.common.variable import *
-from processing.morocco.stages.abstract.morocco_template_stage import MoroccoTemplateStage
-from processing.morocco.util_types import MoroccoVisaTemplates, MoroccoPayloadData, MoroccoVisaStages
+from common.variable import *
+from morocco.stages.abstract.morocco_template_stage import MoroccoTemplateStage
+from morocco.util_types import MoroccoVisaTemplates, MoroccoPayloadData, MoroccoVisaStages
 
 
 class MoroccoInsertBeneficiaryDataStage(MoroccoTemplateStage):

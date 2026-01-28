@@ -3,8 +3,8 @@ from typing import List, Generic
 
 from requests import Session
 
-from processing.common.stages.evisa_stage import BaseEVisaStage
-from processing.common.util_types import TPayloadData, TStage
+from common.stages.evisa_stage import BaseEVisaStage
+from common.util_types import TPayloadData, TStage
 
 
 class EVisaPipeline(Generic[TPayloadData, TStage], ABC):

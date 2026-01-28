@@ -1,8 +1,8 @@
 from typing import List
 
-from processing.common.variable import Variable
-from processing.srilanka.stages.abstract.srilanka_template_stage import SriLankaTemplateStage
-from processing.srilanka.util_types import SriLankaPayloadData, SriLankaVisaTemplates
+from common.variable import Variable
+from srilanka.stages.abstract.srilanka_template_stage import SriLankaTemplateStage
+from srilanka.util_types import SriLankaPayloadData, SriLankaVisaTemplates
 
 
 class SriLankaConfirmStage(SriLankaTemplateStage):

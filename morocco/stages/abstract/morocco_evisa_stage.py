@@ -3,8 +3,8 @@ from typing import Dict, Optional
 
 from requests import Session, Response
 
-from processing.common.stages.evisa_stage import BaseEVisaStage
-from processing.morocco.util_types import MoroccoPayloadData, MoroccoVisaStages
+from common.stages.evisa_stage import BaseEVisaStage
+from morocco.util_types import MoroccoPayloadData, MoroccoVisaStages
 
 
 class BaseMoroccoEVisaStage(BaseEVisaStage[MoroccoPayloadData, MoroccoVisaStages], ABC):

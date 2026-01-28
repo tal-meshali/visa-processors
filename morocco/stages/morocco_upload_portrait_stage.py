@@ -1,6 +1,6 @@
-from processing.common.variable import Variable
-from processing.morocco.stages.abstract.morocco_upload_document_stage import MoroccoUploadDocumentStage
-from processing.morocco.util_types import MoroccoPayloadData
+from common.variable import Variable
+from morocco.stages.abstract.morocco_upload_document_stage import MoroccoUploadDocumentStage
+from morocco.util_types import MoroccoPayloadData
 
 
 class MoroccoUploadPortraitStage(MoroccoUploadDocumentStage):

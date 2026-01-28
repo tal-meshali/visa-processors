@@ -1,9 +1,9 @@
 from typing import List
 
-from processing.common.variable import Variable
-from processing.tazania.stages.abstract.tanzania_recaptcha_stage import BaseTanzaniaReCaptchaStage
-from processing.tazania.stages.abstract.tanzania_template_stage import TanzaniaTemplateStage
-from processing.tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData, TanzaniaVisaTemplates
+from common.variable import Variable
+from tazania.stages.abstract.tanzania_recaptcha_stage import BaseTanzaniaReCaptchaStage
+from tazania.stages.abstract.tanzania_template_stage import TanzaniaTemplateStage
+from tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData, TanzaniaVisaTemplates
 
 
 class TanzaniaLoginStage(BaseTanzaniaReCaptchaStage, TanzaniaTemplateStage):

@@ -1,7 +1,7 @@
 from abc import ABC
 
-from processing.common.util_methods import solve_captcha
-from processing.tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
+from common.util_methods import solve_captcha
+from tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
 
 
 class BaseTanzaniaReCaptchaStage(BaseTanzaniaEVisaStage, ABC):

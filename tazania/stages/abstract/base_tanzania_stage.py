@@ -4,8 +4,8 @@ from typing import Dict, Optional, List
 from bs4 import BeautifulSoup
 from requests import Session
 
-from processing.common.stages.evisa_stage import BaseEVisaStage
-from processing.tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData
+from common.stages.evisa_stage import BaseEVisaStage
+from tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData
 
 AUTHENTICATION_FIELDS = [
     "__RequestVerificationToken",

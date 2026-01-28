@@ -1,10 +1,10 @@
 from typing import Dict, List
 
-from processing.common.variable import Variable, MimicVariable
-from processing.tazania.stages.abstract.tanzania_template_stage import TanzaniaTemplateStage
-from processing.tazania.util_methods import get_employment_type, get_employment_data
-from processing.tazania.util_types import TanzaniaPayloadData, TanzaniaVisaStages, TanzaniaVisaTemplates
-from processing.tazania.variables import TanzaniaOptionsVariable
+from common.variable import Variable, MimicVariable
+from tazania.stages.abstract.tanzania_template_stage import TanzaniaTemplateStage
+from tazania.util_methods import get_employment_type, get_employment_data
+from tazania.util_types import TanzaniaPayloadData, TanzaniaVisaStages, TanzaniaVisaTemplates
+from tazania.variables import TanzaniaOptionsVariable
 
 
 class TanzaniaContactInfoStage(TanzaniaTemplateStage):

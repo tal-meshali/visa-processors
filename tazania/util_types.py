@@ -1,6 +1,6 @@
 from enum import Enum
-from processing.common.data_classes import *
-from processing.common.util_types import StageEnum, TemplateEnum
+from common.data_classes import *
+from common.util_types import StageEnum, TemplateEnum
 from dataclasses import dataclass
 
 

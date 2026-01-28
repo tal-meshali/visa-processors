@@ -1,6 +1,6 @@
-from processing.common.variable import ISODateVariable
-from processing.morocco.stages.abstract.morocco_template_stage import MoroccoTemplateStage
-from processing.morocco.util_types import MoroccoVisaTemplates, MoroccoPayloadData, MoroccoVisaStages
+from common.variable import ISODateVariable
+from morocco.stages.abstract.morocco_template_stage import MoroccoTemplateStage
+from morocco.util_types import MoroccoVisaTemplates, MoroccoPayloadData, MoroccoVisaStages
 
 
 class MoroccoCreateBeneficiaryStage(MoroccoTemplateStage):

@@ -1,13 +1,13 @@
 from typing import List
 
-from processing.common.pipeline import EVisaPipeline
-from processing.common.stages.evisa_stage import BaseEVisaStage
-from processing.common.util_types import TPayloadData, TStage
-from processing.srilanka.stages.srilanka_add_beneificary_stage import SriLankaAddBeneficiaryStage
-from processing.srilanka.stages.srilanka_confirm_stage import SriLankaConfirmStage
-from processing.srilanka.stages.srilanka_contact_stage import SriLankaContactStage
-from processing.srilanka.stages.srilanka_terms_stage import SriLankaTermsStage
-from processing.srilanka.util_types import SriLankaPayloadData, SriLankaVisaStages
+from common.pipeline import EVisaPipeline
+from common.stages.evisa_stage import BaseEVisaStage
+from common.util_types import TPayloadData, TStage
+from srilanka.stages.srilanka_add_beneificary_stage import SriLankaAddBeneficiaryStage
+from srilanka.stages.srilanka_confirm_stage import SriLankaConfirmStage
+from srilanka.stages.srilanka_contact_stage import SriLankaContactStage
+from srilanka.stages.srilanka_terms_stage import SriLankaTermsStage
+from srilanka.util_types import SriLankaPayloadData, SriLankaVisaStages
 
 
 # TODO: Use https://client-services.easysend.app to get city and address options

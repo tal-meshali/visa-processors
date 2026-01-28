@@ -1,6 +1,6 @@
-from processing.common.data_classes import PassportData, ContactData, DocumentData, EmploymentData, TravelData
+from common.data_classes import PassportData, ContactData, DocumentData, EmploymentData, TravelData
 from dataclasses import dataclass
-from processing.common.util_types import StageEnum, TemplateEnum
+from common.util_types import StageEnum, TemplateEnum
 
 
 class MoroccoVisaStages(StageEnum):

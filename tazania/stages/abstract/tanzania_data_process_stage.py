@@ -5,7 +5,7 @@ from mimetypes import guess_type
 from typing import Dict
 
 from bs4 import BeautifulSoup
-from processing.tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
+from tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
 
 
 class TanzaniaDataProcessStage(BaseTanzaniaEVisaStage, ABC):

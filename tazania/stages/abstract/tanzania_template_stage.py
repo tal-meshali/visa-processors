@@ -1,9 +1,9 @@
 from abc import ABC
 from typing import Dict
 
-from processing.common.stages.template_stage import EVisaTemplateStage
-from processing.tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
-from processing.tazania.util_types import TanzaniaPayloadData, TanzaniaVisaTemplates
+from common.stages.template_stage import EVisaTemplateStage
+from tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
+from tazania.util_types import TanzaniaPayloadData, TanzaniaVisaTemplates
 
 
 class TanzaniaTemplateStage(BaseTanzaniaEVisaStage,

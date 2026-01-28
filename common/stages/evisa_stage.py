@@ -3,7 +3,7 @@ from typing import Dict, Generic, Optional
 import json
 from requests import Session
 
-from processing.common.util_types import TStage, TPayloadData
+from common.util_types import TStage, TPayloadData
 
 
 class BaseEVisaStage(Generic[TPayloadData, TStage], ABC):

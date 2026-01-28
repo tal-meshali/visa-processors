@@ -1,8 +1,8 @@
 from typing import Dict
 
-from processing.common.util_types import TPayloadData
-from processing.srilanka.stages.abstract.base_srilanka_stage import BaseSriLankaEVisaStage
-from processing.srilanka.util_types import SriLankaVisaStages
+from common.util_types import TPayloadData
+from srilanka.stages.abstract.base_srilanka_stage import BaseSriLankaEVisaStage
+from srilanka.util_types import SriLankaVisaStages
 
 
 class SriLankaInitialStage(BaseSriLankaEVisaStage):

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
-from processing.common.data_classes import PassportData, ContactData, TravelData
-from processing.common.util_types import StageEnum, TemplateEnum
+from common.data_classes import PassportData, ContactData, TravelData
+from common.util_types import StageEnum, TemplateEnum
 
 
 class SriLankaVisaStages(StageEnum):

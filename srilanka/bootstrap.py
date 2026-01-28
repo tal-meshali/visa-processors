@@ -1,6 +1,6 @@
-from processing.common.data_classes import PassportData
-from processing.srilanka.srilanka_pipeline import SriLankaEVisaPipeline
-from processing.srilanka.util_types import SriLankaPayloadData, SriLankaTravelData, SriLankaContactData, \
+from common.data_classes import PassportData
+from srilanka.srilanka_pipeline import SriLankaEVisaPipeline
+from srilanka.util_types import SriLankaPayloadData, SriLankaTravelData, SriLankaContactData, \
     SriLankaRequestData
 from datetime import datetime
 

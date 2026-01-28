@@ -1,9 +1,9 @@
 from typing import List
 
-from processing.common.variable import Variable, MimicVariable
-from processing.tazania.stages.abstract.tanzania_template_stage import TanzaniaTemplateStage
-from processing.tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData, TanzaniaVisaTemplates
-from processing.tazania.variables import TanzaniaOptionsVariable, TanzaniaDateVariable
+from common.variable import Variable, MimicVariable
+from tazania.stages.abstract.tanzania_template_stage import TanzaniaTemplateStage
+from tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData, TanzaniaVisaTemplates
+from tazania.variables import TanzaniaOptionsVariable, TanzaniaDateVariable
 
 
 class TanzaniaTravelInfoStage(TanzaniaTemplateStage):

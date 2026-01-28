@@ -1,9 +1,9 @@
 from abc import ABC
 from typing import Dict
 
-from processing.common.stages.template_stage import EVisaTemplateStage
-from processing.srilanka.stages.abstract.base_srilanka_stage import BaseSriLankaEVisaStage
-from processing.srilanka.util_types import SriLankaPayloadData, SriLankaVisaTemplates, SriLankaVisaStages
+from common.stages.template_stage import EVisaTemplateStage
+from srilanka.stages.abstract.base_srilanka_stage import BaseSriLankaEVisaStage
+from srilanka.util_types import SriLankaPayloadData, SriLankaVisaTemplates, SriLankaVisaStages
 
 
 class SriLankaTemplateStage(BaseSriLankaEVisaStage,
