@@ -7,6 +7,7 @@ import re
 from datetime import datetime
 from typing import Optional
 
+import google
 import gspread
 import requests
 from google.oauth2.service_account import Credentials as ServiceAccountCredentials
@@ -63,13 +64,18 @@ class VisaRequestIdExtractor:
         """Get or create Google Sheets client instance using service account."""
         if self._sheet_client is None:
             if not self.service_account_path:
-                raise ValueError(
-                    "Service account path required for Google Sheets access. "
-                    "Please provide service_account_path."
+                try:
+                    # In Cloud Run, service account should already be configured.
+                    creds, project = google.auth.default(scopes=SHEETS_SCOPES)
+                except Exception:
+                    raise ValueError(
+                        "Service account path required for Google Sheets access. "
+                        "Please provide service_account_path."
+                    )
+            else:
+                creds = ServiceAccountCredentials.from_service_account_file(
+                    self.service_account_path, scopes=SHEETS_SCOPES
                 )
-            creds = ServiceAccountCredentials.from_service_account_file(
-                self.service_account_path, scopes=SHEETS_SCOPES
-            )
             self._sheet_client = gspread.authorize(creds)
         return self._sheet_client
 
