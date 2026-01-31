@@ -6,9 +6,11 @@ from requests import Session, Response
 from common.stages.evisa_stage import BaseEVisaStage
 from morocco.util_types import MoroccoPayloadData, MoroccoVisaStages
 
+MOROCCO_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+
 
 class BaseMoroccoEVisaStage(BaseEVisaStage[MoroccoPayloadData, MoroccoVisaStages], ABC):
-    USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36"
+    USER_AGENT = MOROCCO_USER_AGENT
     data_key = "json"
 
     def handle(self, session: Session, data: MoroccoPayloadData):

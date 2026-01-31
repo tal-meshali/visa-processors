@@ -1,24 +1,27 @@
+import os
 from abc import ABC, abstractmethod
 from datetime import datetime
-from typing import Generic, Dict
+from typing import Generic, Dict, Optional
 
-from models.orm import Beneficiary
-from processing.common.data_classes import PassportData
-from processing.common.util_types import TPayloadData
+from google.cloud import firestore
+from common.data_classes import PassportData
+from common.util_types import TPayloadData
 
 
 class Translator(Generic[TPayloadData], ABC):
-    EMAIL = 'moredite1@gmail.com'
+    EMAIl = 'admin@visa-kal.co.il'
 
-    def __init__(self, beneficiary: Beneficiary):
-        self.beneficiary = {**beneficiary.to_dict(), "id": beneficiary.id}
+    @staticmethod
+    def _format_datetime(date_string, date_format='%Y-%m-%d'):
+        return datetime.strptime(date_string, date_format)
 
     @staticmethod
     def _convert_passport_data(passport_data: Dict) -> PassportData:
-        kwargs = {k: datetime.strptime(v, '%d/%m/%Y') if k.startswith('date') else v for k, v in passport_data.items()
+        kwargs = {k: Translator._format_datetime(v) if k.startswith('date') else v for k, v in
+                  passport_data.items()
                   if not k.startswith("code_section")}
         return PassportData(**kwargs)
 
     @abstractmethod
-    def convert(self) -> TPayloadData:
+    def convert(self, form_data: Dict) -> TPayloadData:
         pass
