@@ -10,6 +10,7 @@ from typing import Optional
 import google
 import gspread
 import requests
+from flask import abort
 from google.oauth2.service_account import Credentials as ServiceAccountCredentials
 from googleapiclient.discovery import build
 
@@ -162,7 +163,7 @@ class VisaRequestIdExtractor:
 
                 worksheet.append_row([response.json()['numeroDossier'], message_date, False])
 
-    def get_and_remove_request_id(self) -> Optional[str]:
+    def get_and_remove_request_id(self, retry=True) -> Optional[str]:
         """
         Get the first unprocessed request ID from the sheet, remove it from the sheet,
         and return it.
@@ -175,15 +176,24 @@ class VisaRequestIdExtractor:
         worksheet = spreadsheet.sheet1
 
         # Get first unused code row index
-        row_index = next(i for i, value in enumerate(worksheet.col_values(3)) if value == 'FALSE') + 1
-        code = worksheet.row_values(row_index)[0]
+        try:
+            row_index = next(i for i, value in enumerate(worksheet.col_values(3)) if value == 'FALSE') + 1
+            code = worksheet.row_values(row_index)[0]
 
-        # Mark as used
-        worksheet.update_cell(row_index, 3, "TRUE")
+            # Mark as used
+            worksheet.update_cell(row_index, 3, "TRUE")
 
-        return code
+            return code
 
-    def update_known_request_code(self, old_request_code, request_code, firebase_request_id):
+        except StopIteration:
+            if retry:
+                self.extract_and_append_email_data()
+                self.get_and_remove_request_id(retry=False)
+            else:
+                self.get_new_url()
+                abort(500, "No available code has been found!")
+
+    def update_known_request_code(self, old_request_code, request_code):
         sheet_client = self._get_sheet_client()
         spreadsheet = sheet_client.open_by_url(SHEET_URL)
         worksheet = spreadsheet.sheet1
@@ -194,6 +204,8 @@ class VisaRequestIdExtractor:
 
         # Update the new one to keep track
         worksheet.update_cell(row_index, 3, "TRUE")
+        worksheet.update_cell(row_index, 4, code)
+        worksheet.update_cell(row_index, 1, request_code)
 
 
 if __name__ == '__main__':

@@ -31,5 +31,8 @@ class MoroccoEVisaPipeline(EVisaPipeline[MoroccoPayloadData, MoroccoVisaStages])
 
     def run(self, form_data: Dict) -> MoroccoPayloadData:
         data = super().run(form_data)
-        self.translator.creation_request_id = data.request.request_id
+        if data.request.request_id != self.translator.creation_request_id:
+            self.visa_request_id_manager.update_known_request_code(self.translator.creation_request_id,
+                                                                   data.request.request_id)
+            self.translator.creation_request_id = data.request.request_id
         return data
