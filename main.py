@@ -28,6 +28,6 @@ country_to_controller = {
 
 
 @functions_framework.http
-async def process_morocco(request: Request):
+async def process_request(request: Request):
     controller = country_to_controller[request.json['country']](firestore_client=_FIRESTORE, bucket_name=_BUCKET_NAME)
     return controller.process_request(request.json['request_id']).as_dict()
