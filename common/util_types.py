@@ -27,7 +27,7 @@ class TemplateEnum(Enum, metaclass=ABCEnumMeta):
 
     @property
     def value(self) -> str:
-        return os.path.join(os.getcwd(), 'templates', str(super().value) + ".json")
+        return os.path.join(os.getcwd(), self.base_path, str(super().value) + ".json")
 
 
 TPayloadData = TypeVar("TPayloadData")

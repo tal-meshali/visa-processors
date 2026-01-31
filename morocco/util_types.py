@@ -23,7 +23,7 @@ class MoroccoVisaTemplates(TemplateEnum):
 
     @property
     def base_path(self):
-        return "./templates"
+        return "./morocco/templates"
 
 
 @dataclass
