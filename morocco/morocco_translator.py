@@ -9,9 +9,9 @@ from morocco.util_types import MoroccoPayloadData, RequestPayloadData
 
 
 class MoroccoTranslator(Translator[MoroccoPayloadData]):
-    def __init__(self):
+    def __init__(self, creation_request_id: str):
         super().__init__()
-        self.creation_request_id = VisaRequestIdExtractor().get_and_remove_request_id()
+        self.creation_request_id = creation_request_id
 
     def convert(self, form_data: Dict) -> MoroccoPayloadData:
         return MoroccoPayloadData(
