@@ -41,7 +41,7 @@ country_to_controller = {
 
 
 @functions_framework.http
-async def process_request(request: Request):
+def process_request(request: Request):
     auth_header = None
     if request:
         auth_header = request.headers.get("Authorization")
