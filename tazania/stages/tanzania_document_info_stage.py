@@ -4,16 +4,23 @@ from typing import Dict, Optional, List
 
 from tazania.stages.abstract.base_tanzania_stage import BaseTanzaniaEVisaStage
 from tazania.util_types import TanzaniaVisaStages, TanzaniaPayloadData
+from common.util_methods import (
+    assert_firebase_gcs_https_url,
+    download_bytes_from_firebase_gcs_url,
+    extract_bucket_and_blob_from_firebase_gcs_url,
+)
 
 
 class TanzaniaDocumentsUploadStage(BaseTanzaniaEVisaStage):
     stage = TanzaniaVisaStages.DocumentInfo
 
     @staticmethod
-    def process_file(field_name: str, path: str, result: Dict):
-        name = os.path.basename(path)
-        with open(path, "rb") as f:
-            result[field_name] = (os.path.basename(path), f.read(), guess_type(name)[0])
+    def process_file(field_name: str, url: str, result: Dict):
+        assert_firebase_gcs_https_url(url)
+        _, blob_path = extract_bucket_and_blob_from_firebase_gcs_url(url)
+        name = os.path.basename(blob_path) or field_name
+        content = download_bytes_from_firebase_gcs_url(url)
+        result[field_name] = (name, content, guess_type(name)[0])
 
     def process_files(
             self, data: TanzaniaPayloadData
