@@ -5,4 +5,4 @@ from zic.util_types import ZICInsurancePayloadData, ZICInsuranceStages
 
 
 class BaseZICStage(BaseEVisaStage[ZICInsurancePayloadData, ZICInsuranceStages], ABC):
-    pass
+    data_key = "data"
