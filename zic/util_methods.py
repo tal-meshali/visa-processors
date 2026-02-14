@@ -11,6 +11,7 @@ def get_mapping_by_row_id(options: List[Dict], key: str):
 
 def handle_arrivals_splash(session: Session):
     response = session.get(ZICInsuranceStages.ArrivalsSplash.value)
+    print(response.json())
     data = response.json()['response']['data']
     return ArrivalSplashData(
         insurance_types=data["insurance_type"]["en"],
