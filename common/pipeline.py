@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Generic, Dict
+from typing import List, Generic, Dict, TypeVar
 
 from requests import Session
 
@@ -24,3 +24,16 @@ class EVisaPipeline(Generic[TPayloadData, TStage], ABC):
             stage.handle(session, data)
 
         return data
+
+
+class MultiEVisaPipeline(EVisaPipeline[TPayloadData, TStage], ABC):
+    def run(self, form_data: List[Dict]) -> List[TPayloadData]:
+        data = [self.translator.convert(beneficiary) for beneficiary in form_data]
+        session = Session()
+        for stage in self.stages:
+            stage.handle(session, data)
+
+        return data
+
+
+TPipeline = TypeVar("TPipeline", bound=EVisaPipeline)
