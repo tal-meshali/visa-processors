@@ -93,6 +93,7 @@ class MultiController(Generic[TPayloadData, TStage], BaseController[MultiEVisaPi
             results.append(
                 {"request_id": request_id, "status": "error", "error": str(e)}
             )
+            raise e
 
         return ControllerResult(
             request_id=request_id,
