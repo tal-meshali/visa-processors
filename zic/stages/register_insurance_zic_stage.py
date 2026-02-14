@@ -9,11 +9,12 @@ from zic.captcha import crack_captcha
 from zic.stages.abstract.base_zic_stage import BaseZICStage
 from zic.stages.dependant_insurance_zic_stage import DependantInsuranceZICStage
 from zic.util_methods import handle_arrivals_splash, get_insurance_type
-from zic.util_types import ZICInsurancePayloadData, ZICInsuranceTemplates, ArrivalSplashData
+from zic.util_types import ZICInsurancePayloadData, ZICInsuranceTemplates, ArrivalSplashData, ZICInsuranceStages
 
 
 class RegisterInsuranceZICStage(BaseZICStage, EVisaTemplateStage[ZICInsurancePayloadData, ZICInsuranceTemplates]):
     template = ZICInsuranceTemplates.Register
+    stage = ZICInsuranceStages.Register
     arrival_splash_data: ArrivalSplashData
 
     def handle(self, session: Session, data: ZICInsurancePayloadData):
